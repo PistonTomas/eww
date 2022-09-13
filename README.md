@@ -3,6 +3,7 @@
 # Eww
 
 <img src="./.github/EwwLogo.svg" height="100" align="left"/>
+A Pre-builded Eww
 
 Elkowars Wacky Widgets is a standalone widget system made in Rust that allows you to implement
 your own, custom widgets in any window manager.
