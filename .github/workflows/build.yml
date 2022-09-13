@@ -34,8 +34,6 @@ jobs:
            run: cargo check --no-default-features --features=wayland
          - name: Build Release
            run: cargo check --release
-         - name: Upload 
-           run: chmod +x ./target/release/eww
          - name: Upload Artifsct
            uses: actions/upload-artifact@v3.1.0
            with:
