@@ -17,7 +17,7 @@ jobs:
       runs-on: ubuntu-latest
       steps:
          - name: Install dependencies
-           run: sudo apt-get update && sudo apt-get install libgtk-3-dev libgtk-layer-shell-dev neofetch
+           run: sudo apt-get update && sudo apt-get install zip libgtk-3-dev libgtk-layer-shell-dev neofetch
          - name: Set up
            uses: actions-rs/toolchain@v1
            with:
@@ -34,11 +34,13 @@ jobs:
            run: cargo check --no-default-features --features=wayland
          - name: Build Release
            run: cargo check --release
+         - name: Zip The artifact
+           run: zip -r Build.zip /target/
          - name: Upload Artifsct
            uses: actions/upload-artifact@v3.1.0
            with:
              name: Debian Based
-             path: /target/
+             path: build.zip
 
 
 
